@@ -21,6 +21,8 @@ FetchContent_MakeAvailable(googletest)
 project(thrust_weekly CXX C CUDA)
 file(GLOB_RECURSE thrust_weekly_srcs src/*.cc src/*.cu src/*.cuh src/*.cpp)
 
+add_compile_definitions(THRUST_DEBUG_SYNC)
+
 add_executable(thrust_weekly ${thrust_weekly_srcs})
 
 target_link_directories(thrust_weekly PRIVATE /usr/local/cuda-11.6/lib64)
