@@ -21,7 +21,10 @@ FetchContent_MakeAvailable(googletest)
 project(thrust_weekly CXX C CUDA)
 file(GLOB_RECURSE thrust_weekly_srcs src/*.cc src/*.cu src/*.cuh src/*.cpp)
 
+# This is the Thrust debug parameter for output debug info.
 add_compile_definitions(THRUST_DEBUG_SYNC)
+# Enable CUB debug log.
+add_compile_definitions(CUB_DETAIL_DEBUG_ENABLE_LOG)
 
 add_executable(thrust_weekly ${thrust_weekly_srcs})
 
